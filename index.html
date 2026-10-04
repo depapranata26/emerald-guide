@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Panduan Pokemon Emerald — Bahasa Indonesia</title>
+<meta name="description" content="Walkthrough lengkap Pokemon Emerald berbahasa Indonesia: tiap kota, 8 gym, Elite Four, dan tips.">
+<meta name="theme-color" content="#0d1f16">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'self';">
+<meta name="referrer" content="no-referrer">
+<link rel="manifest" href="manifest.json">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#0d1f16;color:#e8f5ec;min-height:100vh;-webkit-tap-highlight-color:transparent}
+.hero{background:radial-gradient(120% 130% at 50% 0%,#14532d 0%,#0d1f16 65%);padding:30px 18px 24px;text-align:center}
+.hero .ball{font-size:44px;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.eyebrow{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:3px;color:#052e1f;background:linear-gradient(135deg,#4ade80,#22c55e);padding:6px 16px;border-radius:999px;text-transform:uppercase;margin-top:10px}
+.hero h1{font-size:26px;font-weight:800;margin:12px 0 6px}
+.hero h1 .em{color:#4ade80}
+.hero .sub{color:#a7c4b2;font-size:13.5px}
+.stats{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(74,222,128,.25);border-radius:14px;padding:8px 18px}
+.stat b{display:block;font-size:19px}
+.stat span{font-size:11px;color:#a7c4b2;letter-spacing:1px;text-transform:uppercase}
+.tabs{position:sticky;top:0;z-index:30;display:flex;background:rgba(13,31,22,.95);backdrop-filter:blur(12px);border-bottom:1px solid #1e3a2a;padding:10px;gap:8px;overflow-x:auto}
+.tabs button{flex:1;white-space:nowrap;border:none;background:#16281d;color:#a7c4b2;font-size:13px;font-weight:700;padding:11px 10px;border-radius:12px;cursor:pointer}
+.tabs button.active{background:linear-gradient(135deg,#4ade80,#22c55e);color:#052e1f}
+main{max-width:720px;margin:0 auto;padding:14px 14px 60px}
+.toolbar{margin-bottom:12px}
+.search{position:relative}
+.search input{width:100%;padding:13px 16px 13px 44px;border:1px solid #24402f;border-radius:14px;font-size:15px;background:#12241a;color:#e8f5ec;outline:none}
+.search input:focus{border-color:#4ade80}
+.search input::placeholder{color:#5b7a66}
+.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:19px;height:19px;stroke:#5b7a66;fill:none;stroke-width:2}
+.acc{background:#12241a;border:1px solid #1e3a2a;border-radius:14px;margin-bottom:10px;overflow:hidden}
+.acc-head{padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.acc-head h3{font-size:15px;font-weight:700}
+.acc-head .n{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#4ade80,#22c55e);color:#052e1f;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.acc-head .arw{color:#4ade80;font-weight:800;transition:transform .2s}
+.acc.open .acc-head .arw{transform:rotate(180deg)}
+.acc-body{display:none;padding:0 16px 16px;font-size:13.5px;line-height:1.75;color:#c4d8cc}
+.acc.open .acc-body{display:block}
+.acc-body b{color:#fff}
+.gcard{background:#12241a;border:1px solid #1e3a2a;border-radius:14px;padding:15px;margin-bottom:10px}
+.gcard h3{font-size:15.5px;margin-bottom:4px}
+.gtype{font-size:11.5px;font-weight:800;color:#052e1f;background:#4ade80;padding:3px 10px;border-radius:999px;display:inline-block;margin-bottom:8px}
+.gteam{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+.gteam td{padding:6px 4px;border-bottom:1px solid #1e3a2a}
+.gteam td:last-child{text-align:right;color:#4ade80;font-weight:700}
+.gstrat{font-size:13px;line-height:1.65;color:#c4d8cc;background:#0d1f16;border-radius:10px;padding:10px 12px;margin-top:8px}
+.gstrat b{color:#4ade80}
+.greward{font-size:12.5px;color:#a7c4b2;margin-top:8px}
+.tcard{background:#12241a;border:1px solid #1e3a2a;border-radius:14px;padding:15px;margin-bottom:10px}
+.tcard h3{font-size:15px;color:#4ade80;margin-bottom:8px}
+.tcard p{font-size:13.5px;line-height:1.75;color:#c4d8cc}
+.tcard b{color:#fff}
+.tips{list-style:none}
+.tips li{font-size:13.5px;line-height:1.65;color:#c4d8cc;background:#12241a;border:1px solid #1e3a2a;border-radius:12px;padding:12px 14px 12px 40px;margin-bottom:9px;position:relative}
+.tips li::before{content:"💡";position:absolute;left:12px;top:11px}
+.empty{text-align:center;color:#5b7a66;padding:40px;font-size:14px}
+.count{font-size:12px;color:#5b7a66;margin:4px 2px 10px}
+footer{text-align:center;padding:24px;color:#3d5a48;font-size:12px}
+.src{font-size:11.5px;color:#5b7a66;margin-top:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="ball">⚪</div>
+  <div class="eyebrow">Bahasa Indonesia</div>
+  <h1>Panduan <span class="em">Pokemon Emerald</span></h1>
+  <div class="sub">Walkthrough lengkap, strategi 8 Gym & Elite Four — mudah dipahami</div>
+  <div class="stats">
+    <div class="stat"><b id="stArea">–</b><span>Area</span></div>
+    <div class="stat"><b id="stGym">–</b><span>Gym & League</span></div>
+    <div class="stat"><b id="stTips">–</b><span>Tips</span></div>
+  </div>
+</header>
+<nav class="tabs" id="tabs">
+  <button data-t="walk" class="active">🗺️ Walkthrough</button>
+  <button data-t="gym">🏟️ Gym</button>
+  <button data-t="dasar">📖 Dasar</button>
+  <button data-t="tips">💡 Tips</button>
+</nav>
+<main>
+  <section id="t-walk">
+    <div class="toolbar"><div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <input id="q" type="search" placeholder="Cari area, gym, atau kota…" autocomplete="off">
+    </div></div>
+    <div class="count" id="count"></div>
+    <div id="walkList"></div>
+  </section>
+  <section id="t-gym" hidden><div id="gymList"></div></section>
+  <section id="t-dasar" hidden><div id="dasarList"></div></section>
+  <section id="t-tips" hidden><ul class="tips" id="tipsList"></ul></section>
+  <div class="src">Diadaptasi dari "Pokemon Emerald Guide and Walkthrough" oleh Mr_Jason (GameFAQs). Diterjemahkan & disederhanakan ke Bahasa Indonesia.</div>
+</main>
+<footer>Dibuat oleh Depa Pranata • Pokemon © Nintendo/Game Freak</footer>
+<script src="guide.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+let query="";
+function renderWalk(){
+  const q=query.trim().toLowerCase();
+  const list=AREAS.map((a,i)=>({...a,i})).filter(a=>!q||a.n.toLowerCase().includes(q)||a.c.toLowerCase().includes(q));
+  $("#count").textContent=list.length+" dari "+AREAS.length+" area";
+  $("#walkList").innerHTML=list.length?list.map(a=>`
+    <div class="acc" id="acc${a.i}">
+      <div class="acc-head" onclick="document.querySelector('#acc${a.i}').classList.toggle('open')">
+        <span class="n">${a.i+1}</span><h3 style="flex:1">${esc(a.n)}</h3><span class="arw">▼</span>
+      </div>
+      <div class="acc-body">${a.c}</div>
+    </div>`).join(""):'<div class="empty">Tidak ketemu. Coba kata kunci lain.</div>';
+}
+function renderGyms(){
+  $("#gymList").innerHTML=GYMS.map(g=>`
+    <div class="gcard"><h3>${esc(g.n)}</h3><span class="gtype">${esc(g.t)}</span>
+      <table class="gteam">${g.team.map(p=>`<tr><td>${esc(p[0])}</td><td>Lv ${p[1]}</td></tr>`).join("")}</table>
+      <div class="gstrat"><b>Strategi:</b> ${esc(g.s)}</div>
+      <div class="greward">🏅 ${esc(g.r)}</div>
+    </div>`).join("");
+}
+function renderDasar(){
+  $("#dasarList").innerHTML=BASICS.map(b=>`<div class="tcard"><h3>${esc(b.t)}</h3><p>${b.c}</p></div>`).join("");
+}
+function renderTips(){$("#tipsList").innerHTML=TIPS.map(t=>`<li>${esc(t)}</li>`).join("");}
+document.querySelectorAll("#tabs button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll("#tabs button").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");
+  ["walk","gym","dasar","tips"].forEach(t=>$("#t-"+t).hidden=t!==b.dataset.t);
+  window.scrollTo({top:0});
+}));
+$("#q").addEventListener("input",e=>{query=e.target.value;renderWalk();});
+$("#stArea").textContent=AREAS.length;
+$("#stGym").textContent=GYMS.length;
+$("#stTips").textContent=TIPS.length;
+renderWalk();renderGyms();renderDasar();renderTips();
+if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>
