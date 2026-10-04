@@ -81,6 +81,7 @@ footer{text-align:center;padding:24px;color:#3d5a48;font-size:12px}
   <button data-t="gym">🏟️ Gym</button>
   <button data-t="dasar">📖 Dasar</button>
   <button data-t="tips">💡 Tips</button>
+  <button data-t="data">📋 Data TM/HM</button>
 </nav>
 <main>
   <section id="t-walk">
@@ -94,6 +95,16 @@ footer{text-align:center;padding:24px;color:#3d5a48;font-size:12px}
   <section id="t-gym" hidden><div id="gymList"></div></section>
   <section id="t-dasar" hidden><div id="dasarList"></div></section>
   <section id="t-tips" hidden><ul class="tips" id="tipsList"></ul></section>
+  <section id="t-data" hidden>
+    <div class="toolbar"><div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <input id="q2" type="search" placeholder="Cari TM/HM…" autocomplete="off">
+    </div></div>
+    <div class="count" id="count2"></div>
+    <div class="tcard"><h3>HM — Hidden Machine</h3><table class="gteam" id="hmTable"></table>
+    <p class="muted" style="margin-top:8px">HM bisa dipakai berkali-kali dan tidak bisa dibeli. P = Poke Dollar (uang game), koin = koin Game Corner.</p></div>
+    <div class="tcard"><h3>TM — Technical Machine</h3><table class="gteam" id="tmTable"></table></div>
+  </section>
   <div class="src">Diadaptasi dari "Pokemon Emerald Guide and Walkthrough" oleh Mr_Jason (GameFAQs). Diterjemahkan & disederhanakan ke Bahasa Indonesia.</div>
 </main>
 <footer>Dibuat oleh Depa Pranata • Pokemon © Nintendo/Game Freak</footer>
@@ -126,17 +137,27 @@ function renderDasar(){
   $("#dasarList").innerHTML=BASICS.map(b=>`<div class="tcard"><h3>${esc(b.t)}</h3><p>${b.c}</p></div>`).join("");
 }
 function renderTips(){$("#tipsList").innerHTML=TIPS.map(t=>`<li>${esc(t)}</li>`).join("");}
+let q2="";
+function renderData(){
+  const q=q2.trim().toLowerCase();
+  const tms=TMS.filter(t=>!q||t[1].toLowerCase().includes(q)||t[2].toLowerCase().includes(q));
+  const hms=HMS.filter(t=>!q||t[1].toLowerCase().includes(q)||t[2].toLowerCase().includes(q));
+  $("#count2").textContent=(tms.length+hms.length)+" hasil";
+  $("#tmTable").innerHTML=tms.map(t=>`<tr><td><b>TM${t[0]}</b> ${esc(t[1])}</td><td style="text-align:right;color:#a7c4b2">${esc(t[2])}</td></tr>`).join("");
+  $("#hmTable").innerHTML=hms.map(t=>`<tr><td><b>HM${t[0]}</b> ${esc(t[1])}</td><td style="text-align:right;color:#a7c4b2">${esc(t[2])}</td></tr>`).join("");
+}
 document.querySelectorAll("#tabs button").forEach(b=>b.addEventListener("click",()=>{
   document.querySelectorAll("#tabs button").forEach(x=>x.classList.remove("active"));
   b.classList.add("active");
-  ["walk","gym","dasar","tips"].forEach(t=>$("#t-"+t).hidden=t!==b.dataset.t);
+  ["walk","gym","dasar","tips","data"].forEach(t=>$("#t-"+t).hidden=t!==b.dataset.t);
   window.scrollTo({top:0});
 }));
 $("#q").addEventListener("input",e=>{query=e.target.value;renderWalk();});
+document.addEventListener("input",e=>{if(e.target&&e.target.id==="q2"){q2=e.target.value;renderData();}});
 $("#stArea").textContent=AREAS.length;
 $("#stGym").textContent=GYMS.length;
 $("#stTips").textContent=TIPS.length;
-renderWalk();renderGyms();renderDasar();renderTips();
+renderWalk();renderGyms();renderDasar();renderTips();renderData();
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");
 </script>
 </body>

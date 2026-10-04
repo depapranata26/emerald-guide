@@ -47,3 +47,31 @@ const TIPS=[
 "Grinding terbaik: lawan trainer yang bisa rematch pakai Vs Seeker... eh, di Emerald pakai Match Call!",
 "Rayquaza ada di Sky Pillar (Route 131) — butuh Mach Bike, level 70!"
 ];
+const TMS=[
+["01","Focus Punch","Route 115"],["02","Dragon Claw","Meteor Falls"],["03","Water Pulse","Sootopolis Gym"],
+["04","Calm Mind","Mossdeep Gym"],["05","Roar","Route 114"],["06","Toxic","Fiery Path"],
+["07","Hail","Shoal Cave"],["08","Bulk Up","Dewford Gym"],["09","Bullet Seed","Route 104"],
+["10","Hidden Power","Slateport — beli 3.000P"],["11","Sunny Day","Scorched Slab"],["12","Taunt","Trick House"],
+["13","Ice Beam","Abandoned Ship / Kasino 4.000 koin"],["14","Blizzard","Lilycove Dept. Store — 5.500P"],
+["15","Hyper Beam","Lilycove Dept. Store — 7.500P"],["16","Light Screen","Lilycove Dept. Store — 3.000P"],
+["17","Protect","Lilycove Dept. Store — 3.000P"],["18","Rain Dance","Abandon Ship"],
+["19","Giga Drain","Route 123"],["20","Safeguard","Lilycove Dept. Store — 3.000P"],
+["21","Frustration","Pacifidlog Town"],["22","Solarbeam","Safari Zone"],["23","Iron Tail","Meteor Falls"],
+["24","Thunderbolt","Kasino — 4.000 koin"],["25","Thunder","Lilycove Dept. Store — 5.500P"],
+["26","Earthquake","Seafloor Cavern"],["27","Return","Pacifidlog Town"],["28","Dig","Route 114"],
+["29","Psychic","Kasino 3.500 koin / Victory Road"],["30","Shadow Ball","Mt. Pyre"],
+["31","Brick Break","Sootopolis City"],["32","Double Team","Kasino — 1.500 koin"],
+["33","Reflect","Lilycove Dept. Store — 3.000P"],["34","Shock Wave","Mauville Gym"],
+["35","Flamethrower","Kasino — 4.000 koin"],["36","Sludge Bomb","Dewford Town"],
+["37","Sandstorm","Route 111"],["38","Fire Blast","Lilycove Dept. Store — 5.500P"],
+["39","Rock Tomb","Rustboro Gym"],["40","Aerial Ace","Fortree Gym"],["41","Torment","Slateport City"],
+["42","Facade","Petalburg Gym"],["43","Secret Power","Slateport / Route 111 — 3.000P"],
+["44","Rest","Lilycove City"],["45","Attract","Verdanturf Town"],["46","Thief","Slateport City"],
+["47","Steel Wing","Granite Cave"],["48","Skill Swap","Mt. Pyre"],["49","Snatch","S.S. Tidal"],
+["50","Overheat","Lavaridge Gym"]
+];
+const HMS=[
+["01","Cut","Rustboro City"],["02","Fly","Route 119"],["03","Surf","Petalburg City"],
+["04","Strength","Rusturf Tunnel"],["05","Flash","Granite Cave"],["06","Rock Smash","Mauville City"],
+["07","Waterfall","Cave of Origin"],["08","Dive","Mossdeep City"]
+];
